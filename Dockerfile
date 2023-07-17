@@ -11,7 +11,6 @@ COPY . .
 FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
-COPY --from=nodeui /reactapp/build .
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
  
