@@ -28,7 +28,7 @@ jobs:
         cache: 'npm'
     - uses: mr-smithers-excellent/docker-build-push@v6
       with:
-        image: mukunda2912/my-project
+        image: mukunda2912/trial-project
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
