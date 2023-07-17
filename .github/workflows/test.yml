@@ -37,4 +37,4 @@ jobs:
       with:
         push: true
         tags: mukunda2912/app:latest
-    - run: npm run build 
+    
