@@ -2,6 +2,7 @@ FROM node:latest as nodeui
 WORKDIR /reactapp
 COPY package.json .
 RUN npm install
+RUN npm dev
 COPY . .
 
 
