@@ -1,18 +1,26 @@
-FROM node:latest as nodeui
-WORKDIR /reactapp
-COPY package.json .
-RUN npm install
-RUN npm dev
-COPY . .
+# FROM node:latest as nodeui
+# WORKDIR /reactapp
+# COPY package.json .
+# RUN npm install
+# RUN npm dev
+# COPY . .
 
 
  
 
-# Stage 2 using alpine
-FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
-RUN rm -rf ./*
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# # Stage 2 using alpine
+# FROM nginx:alpine
+# WORKDIR /usr/share/nginx/html
+# RUN rm -rf ./*
+# ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+EXPOSE 3000
+CMD ["node", "src/index.js"]
+
 
  
 
