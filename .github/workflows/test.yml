@@ -39,7 +39,7 @@ jobs:
         tags: mukunda2912/newapp:latest
     
     - name: Run Docker Image
-      run: docker run -p 127.0.0.1:3000:3000 mukunda2912/newapp
+      run: docker run -dp 127.0.0.1:3000:3000 mukunda2912/newapp
     
     - name: Test Docker Image
       run: docker ps
